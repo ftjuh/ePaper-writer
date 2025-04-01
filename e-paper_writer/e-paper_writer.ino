@@ -125,13 +125,10 @@ const uint8_t* fonts[9] = {
    1. Install U8g2 library and find it in your ../Arduino/libraries/ folder.
    2. From the src/clib/ folder, get the u8g2_fonts.c (NOT: u8g2_font.c) file and copy
       it to the src folder of the U8g2_for_Adafruit_GFX library, it replaces the original.
-   3. Open said file and change the #include directive from "u8g2.h" to "u8g2_fonts.c"
-   4. Open U8g2_for_Adafruit_GFX.h.
-   5. For each missing font you want to use, add a line at the end like this
-        extern const uint8_t xxx[] U8G2_FONT_SECTION("xxx");
-      and replace both "xxx" with your fontname.
-   6. Save and recompile.
-
+   3. Open said file and change the #include directive from "u8g2.h" to "u8g2_fonts.h"
+   4. From this repository's extra folder copy U8g2_for_Adafruit_GFX.h to the src folder 
+      of the U8g2_for_Adafruit_GFX library, it replaces the original.
+   5. Save and recompile.
 */
 
 /*
