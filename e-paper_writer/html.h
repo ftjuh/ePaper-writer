@@ -188,9 +188,8 @@ const char index_html[] PROGMEM = R"rawliteral(
 </head>
 <body>
     <h1>ePaper writer by juh</h1>
-
     <nav id="toc"></nav>
-    
+    <p>Project homepage: <a href="https://github.com/ftjuh/ePaper-writer" target="_blank" rel="noopener noreferrer">https://github.com/ftjuh/ePaper-writer</a></p>
     <h2>Draw on canvas</h2>
     <div class="controls-container">
       <canvas id="canvas" width="%EPAPER_WIDTH%" height="%EPAPER_HEIGHT%">
