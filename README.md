@@ -4,11 +4,11 @@
 
 This ESP32 Arduino sketch lets you write images, text, and QR-Codes to your e-paper display from a browser-based interface.
 
-* Draw images with very basic drawing operations and upload it to your e-paper display or save it to the ESP32's internal flash memory.
+* Draw images with very basic drawing operations and upload it to your e-paper display or save it to the ESP32's internal flash memory:
 
     [![Screenshot_canvas_small](images/Screenshot_canvas_small.png)](images/Screenshot_canvas.png) [![canvas_full](images/canvas_small.JPG)](images/canvas_full.JPG) 
 
-* Enter text with very basic markup for color, alignment, spacing, and fonts, and upload it for rendering on the e-paper display:
+* Enter text with very basic markdown for color, alignment, spacing, and fonts, and upload it for rendering on the e-paper display:
 
     [![Screenshot_text_small](images/Screenshot_text_small.png)](images/Screenshot_text.png) [![text_markup_full](images/text_markup_small.JPG)](images/text_markup_full.JPG) 
 
@@ -40,9 +40,9 @@ Written and to date exclusively tested for the WeAct-EpaperModule-2.13 with 250x
 
 ## Usage
 
-1. Install these Arduino libraries: ESPAsyncWebServer, GxEPD2, PNGdec, U8g2_for_Adafruit_GFX, qrcode
+1. Install these Arduino libraries: ESPAsyncWebServer; GxEPD2; PNGdec; U8g2_for_Adafruit_GFX; qrcode
 2. Important: the qrcode library has a naming conflict with a qrcode.h from the ESP32 core. Follow [these instructions](https://github.com/ricmoo/QRCode/issues/35#issuecomment-1179311130) to solve the conflict. You will need to restart the Arduino IDE afterwards.
-3. Make sure you have a working SPIFFS partition on your device. Run the examples from the SPIFFS folder if in doubt.
+3. Make sure you have a working SPIFFS partition on your device. Run the examples from the SPIFFS library folder if in doubt.
 4. Connect your e-paper to your ESP32 and make sure it works as expected by running the GxEPD2 GFX examples.
 5. Load the sketch and adapt the config section at the top of the source code with your e-paper configuration, Wifi credentials, and preferred fonts. *Note*: some newer u8g2 fonts need an updated U8g2_for_Adafruit_GFX.h, see source code for details.
 6. Upload the sketch to your ESP32.
@@ -51,10 +51,11 @@ Written and to date exclusively tested for the WeAct-EpaperModule-2.13 with 250x
 
 ## Additional info
 
+* Always wait for operations to finish, the script has currently no safeguards against competing requests. Particularly saving to flash can take a bit.
 * **Upload** = upload to e-paper; **Save** = save to ESP32 flash memory; **Download** = download from flash to local device
-* **Images** from you local device must be in PNG format and should reflect the dimensions *and* orientation of your e-paper module. If they don't, you might encounter crashes.
-* For the **PNG image upload**, you can choose between two algorithms. Choose *nearest* for two- or three-color images. Use *dithered* for multicolor images. Use the sliders to adjust the thresholds for brightness and redness.
-* The **draw on canvas** comes with no undo, but you can use the save button frequently if your flash memory is not too full yet, take care, though, existing files will be overwritten and saving might take a bit.
+* **Images** from you local device must be in PNG format and should reflect the dimensions *and* orientation of your e-paper module. If they don't, you might encounter crashes. Alpha channel is ignored at the moment.
+* For the **PNG image upload**, you can choose between two algorithms. Choose *nearest* for two- or three-color images. Use *dithered* for multicolor images and photos. Use the sliders to adjust the thresholds for brightness and redness.
+* The **draw on canvas** comes with no undo, but you can use the save button frequently if your flash memory still has space left. Take care, though, existing files will be overwritten and saving might take a bit.
 * **QR-Code** mode will be chosen automatically between numeric, alphanumeric, and byte depending on your input. Choose QR-code size and pixel size with care, the code will not check if the QR will fit ony your screen.
 * A note on RAM: It might be that ESP32 RAM will be a natural limit for supported e-paper dimensions. I only tested my 250x122 3-color module. If things don't work as expected, watch the serial monitor for crash reports.
 * This also applies for QR-code creation, up to 121x121 it worked fine for me without crashing.
