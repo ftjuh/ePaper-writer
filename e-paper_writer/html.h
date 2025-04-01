@@ -1,4 +1,19 @@
+/*
+   e-paper writer (c) juh 2025
+
+   This program is free software; you can redistribute it and/or
+   modify it under the terms of the GNU General Public License as
+   published by the Free Software Foundation, version 2.
+
+   Includes MIT licenced code by J-M-L Jackson from the Arduino Forum
+   https://forum.arduino.cc/t/uploading-various-byte-streams-to-an-esp32-using-espasncwebserver/1233455
+
+*/
+
 /* ============================================
+  Bellow is the original license for parts used from J-M-L Jackson from the Arduino Forum:
+  https://forum.arduino.cc/t/uploading-various-byte-streams-to-an-esp32-using-espasncwebserver/1233455
+  
   code is placed under the MIT license
   Copyright (c) 2024 J-M-L
   For the Arduino Forum : https://forum.arduino.cc/u/j-m-l
@@ -24,8 +39,6 @@
 */
 
 
-// https://github.com/ESP32Async/ESPAsyncWebServer/wiki#send-large-webpage-from-progmem-containing-templates
-
 // Embedded HTML code as a raw string literal
 // this will be processed for %TEMPLATES%, so we need to use %% for a single %
 const char index_html[] PROGMEM = R"rawliteral(
@@ -33,7 +46,7 @@ const char index_html[] PROGMEM = R"rawliteral(
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>e-paper writer by juh</title>
+    <title>ePaper writer by juh</title>
 
     <style>
       canvas {
@@ -174,7 +187,7 @@ const char index_html[] PROGMEM = R"rawliteral(
     
 </head>
 <body>
-    <h1>e-paper writer by juh</h1>
+    <h1>ePaper writer by juh</h1>
 
     <nav id="toc"></nav>
     

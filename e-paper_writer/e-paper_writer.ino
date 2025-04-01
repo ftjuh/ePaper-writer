@@ -1,9 +1,6 @@
 /*
    e-paper writer (c) juh 2025
 
-[9][center][font8]E[red]-[black]P[red]a[black]p[red]e[black]r [red]W[black]r[red]i[black]t[red]e[black]r
-[red]b[black]y [red]j[black]u[red]h
-
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public License as
    published by the Free Software Foundation, version 2.
@@ -24,7 +21,7 @@
 */
 
 /* ============================================
-  This is the original license for parts used from J-M-L Jackson from the Arduino Forum:
+  Bellow is the original license for parts used from J-M-L Jackson from the Arduino Forum:
   https://forum.arduino.cc/t/uploading-various-byte-streams-to-an-esp32-using-espasncwebserver/1233455
 
   code is placed under the MIT license
@@ -122,7 +119,8 @@ const uint8_t* fonts[9] = {
 /*
    [*]A note on missing U8g2 fonts ("... was not declared in this scope" compiler error)
    It seems U8g2_for_Adafruit_GFX is not up to date so it makes not all U8g2 fonts
-   available to Adafruit_GFX, and thus to GxEPD. To fix, follow these steps:
+   available to Adafruit_GFX, and thus to GxEPD. To fix, either remove those fonts from
+   the list above or follow these steps:
 
    1. Install U8g2 library and find it in your ../Arduino/libraries/ folder.
    2. From the src/clib/ folder, get the u8g2_fonts.c (NOT: u8g2_font.c) file and copy
