@@ -5,13 +5,30 @@
 This ESP32 Arduino sketch lets you write images, text, and QR-Codes to your e-paper display from a browser-based interface.
 
 * Draw images with very basic drawing operations and upload it to your e-paper display or save it to the ESP32's internal flash memory.
-* Enter text with very basic markup for color, alignment, spacing, and fonts, and upload it for rendering on the e-paper display.
-* Create QR-codes for display on the e-paper display.
-* Select PNG images from your local device and save them to flash memory.
-* Manage saved images in the ESP32's flash memory (show in browser, upload to e-paper display, download to PC, delete)
 
-[![Screenshot_a](images/Screenshot_small.png)](images/Screenshot_full.png) [![canvas_full](images/canvas_small.JPG)](images/canvas_full.JPG) [![text_markup_full](images/text_markup_small.JPG)](images/text_markup_full.JPG) [![QR_full](images/QR_small.JPG)](images/QR_full.JPG) [![PNGupload_full](images/PNGupload_small.JPG)](images/PNGupload_full.JPG)
+[![Screenshot_canvas_small](images/Screenshot_canvas_small.png)](images/Screenshot_canvas.png) [![canvas_full](images/canvas_small.JPG)](images/canvas_full.JPG) 
 
+* Enter text with very basic markup for color, alignment, spacing, and fonts, and upload it for rendering on the e-paper display:
+
+[![Screenshot_text_small](images/Screenshot_text_small.png)](images/Screenshot_text.png) [![text_markup_full](images/text_markup_small.JPG)](images/text_markup_full.JPG) 
+
+* Create QR-codes for display on the e-paper display:
+
+[![Screenshot_QR_small](images/Screenshot_QR_small.png)](images/Screenshot_QR.png) [![QR_full](images/QR_small.JPG)](images/QR_full.JPG) 
+
+* Select PNG images from your local device and save them to flash memory:
+
+[![Screenshot_save_to_flash_small](images/Screenshot_save_to_flash_small.png)](images/Screenshot_save_to_flash.png)
+
+* Manage saved images in the ESP32's flash memory (show in browser, upload to e-paper display, download to PC, delete):
+
+[![Screenshot_filemanager_and_upload_small](images/Screenshot_filemanager_and_upload_small.png)](images/Screenshot_filemanager_and_upload.png)
+[![PNGupload_full](images/PNGupload_small.JPG)](images/PNGupload_full.JPG)
+
+
+Full screenshot:
+
+[![Screenshot_a](images/Screenshot_small.png)](images/Screenshot_full.png) 
 
 
 ## Requirements
