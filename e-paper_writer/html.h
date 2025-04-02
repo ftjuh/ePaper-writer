@@ -310,7 +310,7 @@ Settings persist until changed.
       <form action="/uploadFile" method="post" enctype="multipart/form-data">
           <input type="file" name="userFileName" id="userFileName">
       </form>
-      <button style="margin-left: 12px; onclick="saveUserFile()">Save to flash</button>
+      <button style="margin-left: 12px;" onclick="saveUserFile()">Save to flash</button>
     </div>
     <hr>
 

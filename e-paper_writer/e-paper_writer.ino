@@ -77,7 +77,12 @@
 
 // Best try to make your display work with some of the GxEPD2 examples, first, and put that config here if all works fine.
 
-GxEPD2_3C<GxEPD2_213_Z98c, GxEPD2_213_Z98c::HEIGHT> display(GxEPD2_213_Z98c(/*CS=5*/ SS, /*DC=*/ 17, /*RST=*/ 16, /*BUSY=*/ 4)); // GDEY0213Z98 122x250, SSD1680
+//ESPP32 Devkitc_V4
+//GxEPD2_3C<GxEPD2_213_Z98c, GxEPD2_213_Z98c::HEIGHT> display(GxEPD2_213_Z98c(/*CS=5*/ SS, /*DC=*/ 17, /*RST=*/ 16, /*BUSY=*/ 4)); // GDEY0213Z98 122x250, SSD1680
+// The above uses the default/hardware SPI MOSI/MISO pins for ePaper SDA and SCL, other pins as defined.
+
+// ESP32 C3 mini
+GxEPD2_3C<GxEPD2_213_Z98c, GxEPD2_213_Z98c::HEIGHT> display(GxEPD2_213_Z98c(/*CS=*/ 7, /*DC=*/ 8, /*RST=*/ 9, /*BUSY=*/ 10)); // GDEY0213Z98 122x250, SSD1680
 // The above uses the default/hardware SPI MOSI/MISO pins for ePaper SDA and SCL, other pins as defined.
 
 
@@ -865,7 +870,7 @@ void setup() {
 
   // SPIFFS
 
-  if (!SPIFFS.begin(false)) {  // Try mounting without auto-format
+  if (!SPIFFS.begin(true)) {  // mounting without auto-format
     Serial.println("SPIFFS Mount Failed!");
     return;
   } else {
