@@ -33,7 +33,7 @@ Full screenshot:
 
 ## Requirements
 
-* ESP32 with SPIFFS flash partition (ESP8266s might work too)
+* ESP32 with SPIFFS flash partition (ESP8266s might work too; ESP32 C3 tested ok)
 * 3-color e-paper module (2-color might work too)
 
 Written and to date exclusively tested for the WeAct-EpaperModule-2.13 with 250x122 pixels.
